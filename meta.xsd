@@ -94,7 +94,7 @@
                 <xs:attribute type="xs:string" name="name" use="required"/>
                 <xs:attribute type="xs:string" name="columnName" use="optional"/>
                 <xs:attribute type="xs:string" name="title" use="required"/>
-                <xs:attribute type="xs:string" name="type" use="required" default="String"/>
+                <xs:attribute type="xs:string" name="type" use="required"/>
                 <xs:attribute type="xs:short" name="iLength" use="optional" default="50"/>
                 <xs:attribute type="xs:byte" name="iPrecision" use="optional" default="12"/>
                 <xs:attribute type="xs:byte" name="iScale" use="optional" default="2"/>
