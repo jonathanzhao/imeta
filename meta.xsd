@@ -36,6 +36,7 @@
         <xs:attribute type="xs:string" name="name" use="required"/>
         <xs:attribute type="xs:string" name="moduleName" use="required"/>
         <xs:attribute type="xs:string" name="title" use="required"/>
+        <xs:attribute type="xs:string" name="domain" use="optional" default="default"/>
         <xs:attribute type="xs:string" name="stereotype" use="optional"/>
         <xs:attribute type="xs:string" name="note" use="optional"/>
         <xs:attribute type="xs:string" name="id" use="optional"/>
@@ -51,6 +52,8 @@
         <xs:attribute type="xs:string" name="stereotype" use="optional"/>
         <xs:attribute type="xs:string" name="note" use="optional"/>
         <xs:attribute type="xs:string" name="id" use="optional"/>
+        <xs:attribute type="xs:string" name="service" use="optional"/>
+        <xs:attribute type="xs:string" name="cache" use="optional"/>
     </xs:complexType>
     <xs:complexType name="interfaceType">
         <xs:sequence>
@@ -108,12 +111,26 @@
                 <xs:attribute type="xs:boolean" name="isUnique" use="optional"/>
                 <xs:attribute type="xs:boolean" name="isCode" use="optional"/>
                 <xs:attribute type="xs:boolean" name="isName" use="optional"/>
+                <xs:attribute type="xs:boolean" name="isPartition" use="optional"/>
+                <xs:attribute type="xs:boolean" name="isRedundant" use="optional"/>
+                <xs:attribute type="xs:string" name="partitionName" use="optional"/>
                 <xs:attribute type="xs:string" name="validate" use="optional"/>
                 <xs:attribute type="xs:string" name="stereotype" use="optional"/>
                 <xs:attribute type="xs:string" name="note" use="optional"/>
+                <xs:attribute type="modeType" name="mode" use="optional"/>
+                <xs:attribute type="xs:string" name="unionKey" use="optional"/>
+                <xs:attribute type="xs:string" name="filterKey" use="optional"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+    <xs:simpleType name="modeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="Insert"/>
+            <xs:enumeration value="Update"/>
+            <xs:enumeration value="All"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:complexType name="itemType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
